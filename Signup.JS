@@ -10,24 +10,27 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
 
     const nameExists = users.some(user => user.name === name);
     const emailExists = users.some(user => user.email === email);
+    const validNumber = number.length === 10;
 
     if (nameExists){
         document.getElementById('ErrorName').style.display = 'block';
-
     }else{
         document.getElementById('ErrorName').style.display = 'none';
-
     }
-
+    
     if(emailExists){
         document.getElementById('ErrorEmail').style.display = 'block';
-
     }else{
         document.getElementById('ErrorEmail').style.display = 'none';
-
     }
 
-    if (!nameExists && !emailExists) {
+    if(!validNumber){
+        document.getElementById('ErrorNumber').style.display = 'block';
+    }else{
+        document.getElementById('ErrorNumber').style.display = 'none';
+    }
+
+    if (!nameExists && !emailExists && validNumber) {
         users.push({ name, email, number, password });
         localStorage.setItem('users', JSON.stringify(users));
         console.log('users', users)
