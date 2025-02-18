@@ -3,7 +3,7 @@
 }
 
 body {
-    background: whitesmoke;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,6 @@ body {
 
 .container {
     box-sizing: border-box;
-
     margin: 0;
     padding: 0;
     background: #fff;
@@ -40,7 +39,6 @@ label {
 
 input {
     box-sizing: border-box;
-
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -80,3 +78,93 @@ input:focus {
     cursor: pointer;
 }
 
+.ForPassword{
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.btn-container {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  .btn-color-mode-switch {
+    display: inline-block;
+    margin: 0px;
+    position: relative;
+  }
+  
+  .btn-color-mode-switch > label.btn-color-mode-switch-inner {
+    margin: 0px;
+    width: 100px; 
+    height: 30px; 
+    background-color: #4aa356;
+    border-radius: 8px; 
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-color-mode-switch > label.btn-color-mode-switch-inner:before {
+    content: attr(data-on);
+    position: absolute;
+    font-size: 16px; 
+    font-weight: 600;
+    top: 5px; 
+    right: 15px; 
+    color: #c1c1c1;
+  }
+  
+  .btn-color-mode-switch > label.btn-color-mode-switch-inner:after {
+    content: attr(data-off);
+    width: 48px; 
+    height: 16px; 
+    background: #fff;
+    border-radius: 6px; 
+    position: absolute;
+    font-size: 15px; 
+    display: flex;
+    justify-content: center;
+    left: 2px;
+    top: 2px;
+    text-align: center;
+    transition: all 0.3s ease;
+    padding: 5px 0px;
+    color: #222;
+    font-weight: 600;
+  }
+  
+  .btn-color-mode-switch input[type="checkbox"] {
+    cursor: pointer;
+    width: 35px; 
+    height: 20px; 
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    margin: 0px;
+  }
+  
+  .btn-color-mode-switch input[type="checkbox"]:checked + label.btn-color-mode-switch-inner {
+    background-color: #4aa356;
+  }
+  
+  .btn-color-mode-switch input[type="checkbox"]:checked + label.btn-color-mode-switch-inner:after {
+    content: attr(data-on);
+    left: 50px; 
+  }
+  
+  .btn-color-mode-switch input[type="checkbox"]:checked + label.btn-color-mode-switch-inner:before {
+    content: attr(data-off);
+    right: auto;
+    left: 15px; 
+  }
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
