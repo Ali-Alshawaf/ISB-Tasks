@@ -8,8 +8,8 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
 
     let users = JSON.parse(localStorage.getItem('users')) ;
 
-    const nameExists = users.some(user => user.name === name);
-    const emailExists = users.some(user => user.email === email);
+    const nameExists = users.some(u => u.name === name);
+    const emailExists = users.some(u => u.email === email);
     const validNumber = number.length === 10;
 
     if (nameExists){
@@ -35,6 +35,7 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
         localStorage.setItem('users', JSON.stringify(users));
         console.log('users', users)
         alert('تم التسجيل بنجاح');
+        window.location.href = 'Login.html';
     }
 });
 

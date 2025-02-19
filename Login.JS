@@ -1,18 +1,39 @@
-
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      document.getElementById('loginForm').addEventListener('submit', function(event) {
         event.preventDefault();
 
-        const email = document.getElementById('Email').value;
-        const password = document.getElementById('Password').value;
+        const email = emailInput.value;
+        const password = passwordInput.value;
 
         let users = JSON.parse(localStorage.getItem('users')) || [];
 
-        const validUser = users.find(user => user.email === email && user.password === password);
+        const validUser = users.find(u => u.email === email && u.password === password);
 
         if (validUser) {
             alert('تم تسجيل الدخول بنجاح');
             document.getElementById('error').style.display = 'none';
+
+            if (rememberMe.checked) {
+                localStorage.setItem('email', email);
+                localStorage.setItem('password', password);
+            } else {
+                localStorage.removeItem('email');
+                localStorage.removeItem('password');
+            }
         } else {
             document.getElementById('error').style.display = 'block';
         }
     });
+
+    const emailInput = document.getElementById('Email');
+    const passwordInput = document.getElementById('Password');
+    const rememberMe = document.getElementById('rememberMe');
+
+    const storedEmail = localStorage.getItem('email');
+    const storedPassword = localStorage.getItem('password');
+
+    if (storedEmail && storedPassword) {
+        emailInput.value = storedEmail;
+        passwordInput.value = storedPassword;
+        rememberMe.checked = true;
+    }
+
