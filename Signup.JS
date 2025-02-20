@@ -1,4 +1,4 @@
-document.getElementById('signupForm').addEventListener('submit', function(event) {
+document.getElementById('signupForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
     const name = document.getElementById('Name').value;
@@ -6,27 +6,27 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
     const number = document.getElementById('Number').value;
     const password = document.getElementById('Password').value;
 
-    let users = JSON.parse(localStorage.getItem('users')) ;
+    let users = JSON.parse(localStorage.getItem('users'));
 
     const nameExists = users.some(u => u.name === name);
     const emailExists = users.some(u => u.email === email);
     const validNumber = number.length === 10;
 
-    if (nameExists){
+    if (nameExists) {
         document.getElementById('ErrorName').style.display = 'block';
-    }else{
+    } else {
         document.getElementById('ErrorName').style.display = 'none';
     }
-    
-    if(emailExists){
+
+    if (emailExists) {
         document.getElementById('ErrorEmail').style.display = 'block';
-    }else{
+    } else {
         document.getElementById('ErrorEmail').style.display = 'none';
     }
 
-    if(!validNumber){
+    if (!validNumber) {
         document.getElementById('ErrorNumber').style.display = 'block';
-    }else{
+    } else {
         document.getElementById('ErrorNumber').style.display = 'none';
     }
 

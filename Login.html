@@ -1,54 +1,52 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Login</title>
     <link rel="stylesheet" href="Style.CSS">
     <script src="Login.JS" defer></script>
 
 </head>
+
 <body>
 
-<div class="container">
-    <h1>تسجيل الدخول</h1>
-    <form action="" id="loginForm">
-        <input class="email" type="email" id="Email" placeholder="البريد الإلكتروني" required>
+    <div class="container">
+        <h1>تسجيل الدخول</h1>
+        <form action="" id="loginForm">
 
-       <input type="password" class="Password" id="Password" placeholder="كلمة المرور" required>
+            <input class="email" type="email" id="Email" placeholder="البريد الإلكتروني" required>
 
+            <input type="password" class="Password" id="Password" placeholder="كلمة المرور" required>
 
-       <p id="error" class="error">البريد الالكتروني او كلمة المرور غير صحيحة</p>
+            <p id="error" class="error">البريد الالكتروني او كلمة المرور غير صحيحة</p>
 
+            <div class="remember-me">
+                <input type="checkbox" id="rememberMe">
+                <label for="rememberMe">تذكرني</label>
+            </div>
 
-       <div class="remember-me">
-            <input type="checkbox" id="rememberMe">
-            <label for="rememberMe">تذكرني</label>
+            <input class="submit" type="submit" value="تسجيل الدخول">
+
+        </form>
+
+        <hr>
+
+        <div class="flex-container">
+            <div class="Links">
+                <a href="Signup.html" class="ForPassword">تسجيل حساب</a>
+            </div>
+
+            <div class="btn-container">
+                <label class="switch btn-color-mode-switch">
+                    <input value="1" id="color_mode" name="color_mode" type="checkbox">
+                    <label class="btn-color-mode-switch-inner" data-off="عربي" data-on="إنجليزي"
+                        for="color_mode"></label>
+                </label>
+            </div>
         </div>
 
-        <input class="submit" type="submit" value="تسجيل الدخول">
-
-        
-        
-    </form>
-    
-        
-      <hr>
-    <div class="flex-container">
-        <div class="Links">
-        <a href="Signup.html"  class="ForPassword">تسجيل حساب</a>
     </div>
-
-        <!-- From Uiverse.io by JaydipPrajapati1910 --> 
-         <div class="btn-container">
-            
-             <label class="switch btn-color-mode-switch">
-                 <input value="1" id="color_mode" name="color_mode" type="checkbox">
-                 <label class="btn-color-mode-switch-inner" data-off="عربي" data-on="إنجليزي" for="color_mode"></label>
-             </label>
-         </div>
-    </div>
-       
-</div>
-
 
 </body>
+
 </html>

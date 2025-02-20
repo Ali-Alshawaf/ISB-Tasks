@@ -1,39 +1,39 @@
-      document.getElementById('loginForm').addEventListener('submit', function(event) {
-        event.preventDefault();
+document.getElementById('loginForm').addEventListener('submit', function (event) {
+    event.preventDefault();
 
-        const email = emailInput.value;
-        const password = passwordInput.value;
+    const email = emailInput.value;
+    const password = passwordInput.value;
 
-        let users = JSON.parse(localStorage.getItem('users')) || [];
+    let users = JSON.parse(localStorage.getItem('users')) || [];
 
-        const validUser = users.find(u => u.email === email && u.password === password);
+    const validUser = users.find(u => u.email === email && u.password === password);
 
-        if (validUser) {
-            alert('تم تسجيل الدخول بنجاح');
-            document.getElementById('error').style.display = 'none';
+    if (validUser) {
+        alert('تم تسجيل الدخول بنجاح');
+        document.getElementById('error').style.display = 'none';
 
-            if (rememberMe.checked) {
-                localStorage.setItem('email', email);
-                localStorage.setItem('password', password);
-            } else {
-                localStorage.removeItem('email');
-                localStorage.removeItem('password');
-            }
+        if (rememberMe.checked) {
+            localStorage.setItem('email', email);
+            localStorage.setItem('password', password);
         } else {
-            document.getElementById('error').style.display = 'block';
+            localStorage.removeItem('email');
+            localStorage.removeItem('password');
         }
-    });
-
-    const emailInput = document.getElementById('Email');
-    const passwordInput = document.getElementById('Password');
-    const rememberMe = document.getElementById('rememberMe');
-
-    const storedEmail = localStorage.getItem('email');
-    const storedPassword = localStorage.getItem('password');
-
-    if (storedEmail && storedPassword) {
-        emailInput.value = storedEmail;
-        passwordInput.value = storedPassword;
-        rememberMe.checked = true;
+    } else {
+        document.getElementById('error').style.display = 'block';
     }
+});
+
+const emailInput = document.getElementById('Email');
+const passwordInput = document.getElementById('Password');
+const rememberMe = document.getElementById('rememberMe');
+
+const storedEmail = localStorage.getItem('email');
+const storedPassword = localStorage.getItem('password');
+
+if (storedEmail && storedPassword) {
+    emailInput.value = storedEmail;
+    passwordInput.value = storedPassword;
+    rememberMe.checked = true;
+}
 
