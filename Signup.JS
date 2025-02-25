@@ -35,7 +35,6 @@ document.getElementById('signupForm').addEventListener('submit', function (event
         localStorage.setItem('users', JSON.stringify(users));
         console.log('users', users)
         alert('تم التسجيل بنجاح');
-        window.location.href = 'Login.html';
     }
 });
 

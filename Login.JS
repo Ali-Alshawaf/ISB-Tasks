@@ -9,9 +9,8 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     const validUser = users.find(u => u.email === email && u.password === password);
 
     if (validUser) {
-        alert('تم تسجيل الدخول بنجاح');
         document.getElementById('error').style.display = 'none';
-
+        window.location.href = 'Index.html';
         if (rememberMe.checked) {
             localStorage.setItem('email', email);
             localStorage.setItem('password', password);
