@@ -1,7 +1,7 @@
 document.getElementById('loginForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    const email = emailInput.value;
+    const email = emailInput.value.toLowerCase();
     const password = passwordInput.value;
 
     let users = JSON.parse(localStorage.getItem('users')) || [];

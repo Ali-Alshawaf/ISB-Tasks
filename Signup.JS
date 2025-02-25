@@ -2,13 +2,13 @@ document.getElementById('signupForm').addEventListener('submit', function (event
     event.preventDefault();
 
     const name = document.getElementById('Name').value;
-    const email = document.getElementById('Email').value;
+    const email = document.getElementById('Email').value.toLowerCase();
     const number = document.getElementById('Number').value;
     const password = document.getElementById('Password').value;
 
-    let users = JSON.parse(localStorage.getItem('users'));
+    let users = JSON.parse(localStorage.getItem('users')) || [];
 
-    const nameExists = users.some(u => u.name === name);
+    const nameExists = users.some(u => u.na === name);
     const emailExists = users.some(u => u.email === email);
     const validNumber = number.length === 10;
 
@@ -34,7 +34,9 @@ document.getElementById('signupForm').addEventListener('submit', function (event
         users.push({ name, email, number, password });
         localStorage.setItem('users', JSON.stringify(users));
         console.log('users', users)
+        window.location.href = 'Login.html';
         alert('تم التسجيل بنجاح');
+
     }
 });
 
