@@ -8,7 +8,7 @@ document.getElementById('signupForm').addEventListener('submit', function (event
 
     let users = JSON.parse(localStorage.getItem('users')) || [];
 
-    const nameExists = users.some(u => u.na === name);
+    const nameExists = users.some(u => u.name === name);
     const emailExists = users.some(u => u.email === email);
     const validNumber = number.length === 10;
 
@@ -36,7 +36,6 @@ document.getElementById('signupForm').addEventListener('submit', function (event
         console.log('users', users)
         window.location.href = 'Login.html';
         alert('تم التسجيل بنجاح');
-
     }
 });
 
