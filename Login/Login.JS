@@ -10,7 +10,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
 
     if (validUser) {
         document.getElementById('error').style.display = 'none';
-        window.location.href = 'Index.html';
+        window.location.href = '../Index/Index.html';
         if (rememberMe.checked) {
             localStorage.setItem('email', email);
             localStorage.setItem('password', password);

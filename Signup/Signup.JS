@@ -34,7 +34,7 @@ document.getElementById('signupForm').addEventListener('submit', function (event
         users.push({ name, email, number, password });
         localStorage.setItem('users', JSON.stringify(users));
         console.log('users', users)
-        window.location.href = 'Login.html';
+        window.location.href = '../Login/Login.html';
         alert('تم التسجيل بنجاح');
     }
 });
