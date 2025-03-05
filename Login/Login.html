@@ -4,6 +4,8 @@
 <head>
     <title>تسجيل الدخول</title>
     <link rel="stylesheet" href="../Style.CSS">
+    <link rel="stylesheet" href="../LangBtn.css">
+
     <script src="Login.JS" defer></script>
 
 </head>
@@ -21,20 +23,19 @@
             <p id="error" class="error">البريد الالكتروني او كلمة المرور غير صحيحة</p>
 
             <div class="remember-me">
-                <input type="checkbox" id="rememberMe">
                 <label for="rememberMe">تذكرني</label>
+
+                <input type="checkbox" id="rememberMe">
             </div>
 
             <input class="submit" type="submit" value="تسجيل الدخول">
 
         </form>
 
-        <hr>
+        <hr class="Line"/>
 
         <div class="flex-container">
-            <div class="Links">
-                <a href="../Signup/Signup.html" class="link">تسجيل حساب</a>
-            </div>
+           
 
             <div class="btn-container">
                 <label class="switch btn-color-mode-switch">
@@ -42,6 +43,9 @@
                     <label class="btn-color-mode-switch-inner" data-off="عربي" data-on="إنجليزي"
                         for="color_mode"></label>
                 </label>
+            </div>
+            <div class="Links">
+                <a href="../Signup/Signup.html" class="link">تسجيل حساب</a>
             </div>
         </div>
 
