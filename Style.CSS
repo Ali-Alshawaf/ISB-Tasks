@@ -46,6 +46,8 @@ input {
   outline: none;
   transition: 0.3s;
   text-align: right;
+  box-sizing: border-box;
+
 }
 
 input:focus {
@@ -61,6 +63,8 @@ input:focus {
 }
 
 .submit {
+  width: 100%;
+
   background: #4aa356;
   color: white;
   border: none;
@@ -68,9 +72,10 @@ input:focus {
   font-size: 16px;
   cursor: pointer;
   border-radius: 6px;
-  width: 100%;
   transition: 0.3s;
   text-align: center;
+  box-sizing: border-box; 
+
 }
 
 .submit:hover {
@@ -110,3 +115,5 @@ input:focus {
   width: auto;
   cursor: pointer;
 }
+
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل</title>
+    <link rel="stylesheet" href="../LangBtn.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .backg {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            height: 100vh;
+        }
+        .error{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="backg col-lg-8 d-none d-lg-block"></div> 
+
+            <div class="col-lg-4 d-flex justify-content-center align-items-center">
+                <div class="container p-4">
+                    <h1 class="text-center">تسجيل</h1>
+                    <form id="signupForm">
+                        <label for="Name" class="form-label float-right">اسم المستخدم</label>
+                        <input id="Name" type="text" class="form-control text-right" placeholder="علي" required>
+                        <p class="error text-danger" id="ErrorName">الاسم مستخدم بالفعل</p>
+
+                        <label for="Email" class="form-label float-right float-right">البريد الإلكتروني</label>
+                        <input id="Email" type="email" class="form-control text-right" placeholder="ali@example.com" required>
+                        <p class="error text-danger" id="ErrorEmail">البريد الإلكتروني مستخدم بالفعل</p>
+
+                        <label for="Number" class="form-label float-right">رقم الجوال</label>
+                        <input id="Number" type="number" class="form-control text-right" placeholder="05 **** ****" required>
+                        <p class="error text-danger" id="ErrorNumber">رقم الجوال غير صحيح</p>
+
+                        <label for="Password" class="form-label float-right">كلمة المرور</label>
+                        <input id="Password" type="password" class="form-control text-right" placeholder="********" required>
+                        <button type="submit" class=" form-control btn-success mt-3 mb-4">تسجيل</button>
+                    </form>
+                    <hr/>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-container">
+                            <label class="switch btn-color-mode-switch">
+                                <input value="1" id="color_mode" name="color_mode" type="checkbox">
+                                <label class="btn-color-mode-switch-inner" data-off="عربي" data-on="إنجليزي"
+                                    for="color_mode"></label>
+                            </label>
+                        </div>
+                        <a href="../Bootstrap/LoginBootstrap.html" class="link">تسجيل الدخول</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.4.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
